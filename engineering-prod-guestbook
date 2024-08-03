@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2024-08-02T12:33:01Z"
+  deletionGracePeriodSeconds: 0
+  deletionTimestamp: "2024-08-02T12:40:36Z"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  generation: 2
+  name: engineering-prod-guestbook
+  namespace: argocd-e2e
+  ownerReferences:
+  - apiVersion: argoproj.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ApplicationSet
+    name: guestbook
+    uid: b96d3067-622e-4462-bff9-3e0ad044087c
+  resourceVersion: "2441800"
+  uid: b6665adf-d373-4bc1-b178-0700e7792193
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: applicationset/examples/list-generator/guestbook/engineering-prod
+    repoURL: https://github.com/argoproj/argo-cd.git
+    targetRevision: HEAD
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""
