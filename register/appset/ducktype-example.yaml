@@ -10,7 +10,7 @@ spec:
     - clusterDecisionResource:
         configMapRef: ocm-placement
         name: test-placement
-        requeueAfterSeconds: 30
+        requeueAfterSeconds: 8900
   template:
     metadata:
       name: '{{.clusterName}}-book-import'
