@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: git-test
+  namespace: argocd-e2e
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/Sriteja-Tadakaluru/argocd-test.git
+        revision: HEAD
+        files:
+          - path: testing/values-*.yaml
+  template:
+    metadata:
+      namespace: argocd-e2e
+      name: 'test-{{Name}}'
+    spec:
+      #ignoreDifferences:
+      #- group: cluster.open-cluster-management.io
+      # kind: ClusterCurator
+      # jsonPointers:
+      #- /spec/desiredCuration
+      project: default
+      source:
+        helm:
+          ignoreMissingValueFiles: true
+          valueFiles:
+            - 'values-{{Name}}.yaml'
+        path: testing
+        repoURL: https://github.com/Sriteja-Tadakaluru/argocd-test.git
+        targetRevision: HEAD
+      destination:
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        retry:
+          limit: -1
