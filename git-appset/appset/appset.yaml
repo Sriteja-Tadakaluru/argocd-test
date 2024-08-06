@@ -6,6 +6,7 @@ metadata:
 spec:
   generators:
     - git:
+        requeueAfterSeconds: 600
         repoURL: https://github.com/Sriteja-Tadakaluru/argocd-test.git
         revision: HEAD
         files:
