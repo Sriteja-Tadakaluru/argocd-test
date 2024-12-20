@@ -2,3 +2,5 @@ Name: sri
 label:
   env: tst
   k8s.io/clustername: test-cluster
+  cni: ovn
+  data: provided
