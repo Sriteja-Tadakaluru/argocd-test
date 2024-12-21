@@ -1,0 +1,6 @@
+Name: prod2
+label:
+  env: prod
+  k8s.io/clustername: test-cluster
+  cni: calico
+  data: provided

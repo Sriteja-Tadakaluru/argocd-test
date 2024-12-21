@@ -1,0 +1,9 @@
+Name: dev1
+label:
+  env: dev
+  k8s.io/clustername: test-cluster
+  cni: calico
+  data: provided
+  owners:
+    name:
+      org: dev1

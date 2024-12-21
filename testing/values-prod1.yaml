@@ -1,0 +1,6 @@
+Name: prod1
+label:
+  env: prd
+  k8s.io/clustername: test-cluster
+  cni: ovn
+  data: provided

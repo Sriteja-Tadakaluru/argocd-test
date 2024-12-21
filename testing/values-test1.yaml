@@ -1,0 +1,6 @@
+Name: test1
+label:
+  env: tst
+  k8s.io/clustername: test-cluster
+  cni: calico
+  data: provided
