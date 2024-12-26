@@ -4,6 +4,3 @@
     k8s.io/clustername: test-cluster
     cni: calico
     data: provided
-    owners:
-      name:
-        org: dev1
