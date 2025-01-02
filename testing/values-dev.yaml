@@ -1,7 +1,11 @@
-sri:
- - Name: dev1
-   label:
-    env: dev
-    k8s.io/clustername: test-cluster
-    cni: calico
-    data: provided
+# sri:
+#  - Name: dev1
+#    label:
+#     env: dev
+#     k8s.io/clustername: test-cluster
+#     cni: calico
+#     data: provided
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sri-test
