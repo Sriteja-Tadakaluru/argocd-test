@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-no-ignore
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Sriteja-Tadakaluru/argocd-test.git
+    targetRevision: HEAD
+    path: machineset
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
