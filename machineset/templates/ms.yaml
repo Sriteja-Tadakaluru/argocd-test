@@ -1,8 +1,6 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  annotations:
-  generation: 1
   labels:
     machine.openshift.io/cluster-api-cluster: CLUSTER-ID
     machine.openshift.io/cluster-api-machine-role: worker
