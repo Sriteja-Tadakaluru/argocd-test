@@ -8,6 +8,7 @@ metadata:
   name: test-ms
   namespace: default
 spec:
+  replicas: 12
   deletePolicy: Oldest
   selector:
     matchLabels:
