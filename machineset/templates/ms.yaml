@@ -2,7 +2,6 @@ apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
   annotations:
-  creationTimestamp: "2025-07-03T06:58:15Z"
   generation: 1
   labels:
     machine.openshift.io/cluster-api-cluster: CLUSTER-ID
@@ -10,8 +9,6 @@ metadata:
     machine.openshift.io/cluster-api-machine-type: worker
   name: test-ms
   namespace: default
-  resourceVersion: "4125576"
-  uid: 6833b27e-0d7b-4a50-8163-59831f2b81f7
 spec:
   deletePolicy: Oldest
   selector:
